@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.TextFlow?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="Controller.EntryController" spacing="10">
+    <!-- Top section for collection type and current collection -->
+    <HBox spacing="10">
+        <Label text="Collection Type:"/>
+        <ComboBox fx:id="collectionTypeComboBox" promptText="Select Collection Type"/>
+        <Label text="Current Collection:"/>
+        <ComboBox fx:id="currentCollectionComboBox" promptText="Select Current Collection"/>
+    </HBox>
+
+    <!-- TextArea to display the collection -->
+    <Label text="Collection Display:"/>
+    <TextArea fx:id="collectionDisplayArea" editable="false" prefHeight="100"/>
+
+    <!-- Section for item key and value -->
+    <HBox spacing="10">
+        <Label text="Key:"/>
+        <TextField fx:id="keyTextField" promptText="Key (for Map only)"/>
+        <Label text="Value:"/>
+        <TextField fx:id="valueTextField" promptText="Value"/>
+    </HBox>
+
+    <!-- Buttons for add, edit, and delete operations -->
+    <HBox spacing="10">
+        <Button text="Add" onAction="#handleAdd"/>
+        <Button text="Edit" onAction="#handleEdit"/>
+        <Button text="Delete" onAction="#handleDelete"/>
+        <Button text="Clear Collection" onAction="#handleClearCollection"/>
+        <Button text="Find in Collection" onAction="#handleFindItem"/>
+    </HBox>
+
+    <!-- Section for regex input and results -->
+    <Label text="Regex Pattern:"/>
+    <HBox spacing="10">
+        <TextField fx:id="patternTextField" promptText="Enter regex pattern" prefWidth="400"/>
+    </HBox>
+
+    <Label text="Input Text:"/>
+    <TextArea fx:id="inputTextArea" promptText="Enter text to search" prefHeight="100"/>
+
+    <Label text="Replacement Text (optional):"/>
+    <TextField fx:id="replacementTextField" promptText="Enter replacement text"/>
+
+    <!-- Buttons for regex operations -->
+    <HBox spacing="10">
+        <Button text="Search" onAction="#handleSearch"/>
+        <Button text="Match" onAction="#handleMatch"/>
+        <Button text="Replace" onAction="#handleReplace"/>
+    </HBox>
+
+    <!-- TextFlow to display regex operation results with highlights -->
+    <Label text="Result:"/>
+    <TextFlow fx:id="resultTextFlow" prefHeight="100"/>
+</VBox>
