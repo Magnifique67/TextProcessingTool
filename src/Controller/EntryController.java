@@ -139,7 +139,7 @@ public class EntryController {
         resultTextFlow.getChildren().clear();
         Text resultText = new Text("Matches found: " + matches.toString());
         resultTextFlow.getChildren().add(resultText);
-        updateRegexHighlights();
+
     }
 
     @FXML
@@ -152,7 +152,7 @@ public class EntryController {
         resultTextFlow.getChildren().clear();
         Text resultText = new Text(isMatch ? "The entire input text matches the pattern." : "The entire input text does not match the pattern.");
         resultTextFlow.getChildren().add(resultText);
-        updateRegexHighlights();
+
     }
 
     @FXML
@@ -166,7 +166,7 @@ public class EntryController {
         resultTextFlow.getChildren().clear();
         Text resultText = new Text("Replaced text: " + replacedText);
         resultTextFlow.getChildren().add(resultText);
-        updateRegexHighlights();
+
     }
 
     @FXML
