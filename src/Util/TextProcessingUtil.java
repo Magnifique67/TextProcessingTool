@@ -63,22 +63,12 @@ public class TextProcessingUtil {
         }
     }
 
-    public void updateEntryInList(int index, Entry newEntry) {
-        entriesList.set(index, newEntry);
-    }
 
     public void deleteEntryFromList(Entry entry) {
         entriesList.remove(entry);
     }
 
-    public void deleteEntryFromSet(Entry entry) {
-        entriesSet.remove(entry);
-    }
-
-    public void deleteEntryFromMap(String key) {
-        entriesMap.remove(key);
-    }
-
+//method for search
     public ArrayList<String> search(String inputText, String patternText) {
         ArrayList<String> matches = new ArrayList<>();
         try {
@@ -92,6 +82,7 @@ public class TextProcessingUtil {
         }
         return matches;
     }
+    //method for match
 
     public boolean match(String inputText, String patternText) {
         try {
@@ -103,7 +94,7 @@ public class TextProcessingUtil {
             return false;
         }
     }
-
+// method for replace
     public String replace(String inputText, String patternText, String replacementText) {
         try {
             Pattern pattern = Pattern.compile(patternText);
