@@ -128,7 +128,7 @@ public class EntryController {
 
         collectionDisplayArea.setText(displayText.toString());
     }
-
+    // regex pattern searching
     @FXML
     private void handleSearch() {
         String inputText = inputTextArea.getText();
@@ -141,7 +141,7 @@ public class EntryController {
         resultTextFlow.getChildren().add(resultText);
 
     }
-
+//regex pattern matching
     @FXML
     private void handleMatch() {
         String inputText = inputTextArea.getText();
@@ -154,7 +154,7 @@ public class EntryController {
         resultTextFlow.getChildren().add(resultText);
 
     }
-
+//regex pattern replace
     @FXML
     private void handleReplace() {
         String inputText = inputTextArea.getText();
@@ -168,7 +168,7 @@ public class EntryController {
         resultTextFlow.getChildren().add(resultText);
 
     }
-
+// adding into collections
     @FXML
     private void handleAdd() {
         String key = keyTextField.getText().trim();
@@ -205,7 +205,7 @@ public class EntryController {
 
         updateCollectionDisplayArea();
     }
-
+//editing collections
     @FXML
     private void handleEdit() {
         String oldValue = collectionDisplayArea.getSelectedText().trim();
@@ -255,7 +255,7 @@ public class EntryController {
         showAlert(AlertType.ERROR, "Error", "Item not found for editing.");
     }
 
-
+//deleting from collections
     @FXML
     private void handleDelete() {
         String item = valueTextField.getText().trim();
@@ -336,6 +336,7 @@ public class EntryController {
             resultTextFlow.getChildren().add(new Text("Invalid regex pattern."));
         }
     }
+    //clear collections
         @FXML
         private void handleClearCollection() {
             switch (currentCollectionType) {
@@ -355,6 +356,7 @@ public class EntryController {
             updateCollectionDisplayArea();
             showAlert(AlertType.INFORMATION, "Clear Operation", "Collection cleared successfully.");
         }
+        //finding items from collections
     @FXML
     private void handleFindItem() {
         String searchValue = valueTextField.getText().trim();
